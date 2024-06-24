@@ -1,0 +1,23 @@
+@media only screen and (min-width: 730px) {
+  body {
+    width: 62.5em;
+    height: auto;
+  }
+  header img {
+    width: 200px;
+    height: auto;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
