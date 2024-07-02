@@ -1,0 +1,48 @@
+@use "variables" as *;
+
+h1 {
+  font-family: $font-first, cursive;
+  letter-spacing: 2px;
+  font-size: 3em;
+  color: $color-five;
+  padding: 10px;
+  -webkit-text-stroke: 0.1px $color-four;
+}
+h2,
+h3 {
+  font-family: $font-first, "Courier New", Courier, monospace;
+  color: $color-one;
+  font-size: 2.2em;
+  margin: 10px;
+}
+p {
+  font-family: $font-second, "Courier New", Courier, monospace;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 5px;
+}
+
+a {
+  font-family: $font-first;
+  text-decoration: none;
+  color: $color-black;
+  font-size: 20px;
+  &:hover {
+    color: $color-one;
+    font-weight: 600;
+    font-size: 22px;
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+abbr {
+  color: $color-one;
+  font-weight: 600;
+}
+
+div {
+  padding: 8px;
+}

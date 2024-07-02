@@ -1,0 +1,184 @@
+@use "variables" as *;
+@use "atoms" as a;
+@use "molecules" as m;
+
+/*===============base-screen ======================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: $base-screen;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 7px;
+}
+.page-wrapper {
+  border: 5px double $color-four;
+  border-radius: 10px;
+  background-color: $color-six;
+}
+h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  @include m.borders;
+}
+h3 {
+  transition: ease-in 1s;
+  &:hover {
+    text-shadow: $color-three 4px 3px;
+    -webkit-text-stroke: 0.1px $color-two;
+    font-size: 45px;
+    transition: ease-in-out 1s;
+  }
+}
+
+h1,
+h2,
+h3,
+ul,
+p {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+
+  & a {
+    font-size: 23px;
+    font-weight: 800;
+    font-family: $font-second;
+    /* background: linear-gradient($color-five, $color-four);
+    color: $color-white;
+    padding: 8px;*/
+    &:hover {
+      background: $color-white;
+      color: $color-black;
+      font-weight: 800;
+    }
+    animation: colors 2s ease-in-out infinite;
+    @include m.colors;
+  }
+}
+
+/*========================mediun-screen===================================*/
+@media (min-width: $mediun-screen) {
+  body {
+    width: 980px;
+    height: auto;
+  }
+  .page-wrapper {
+    display: block;
+  }
+  .intro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "hea hea hea hea"
+      "sum prea prea prea";
+  }
+  header {
+    grid-area: hea;
+    & h2 {
+      text-align: center;
+    }
+    & h1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 20px;
+      width: 100%;
+      @include m.before($image);
+      @include m.after($image);
+    }
+  }
+  .summary {
+    grid-area: sum;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    border: 5px ridge $color-three;
+    border-radius: 15% 7px 20% 7px;
+  }
+
+  .preamble {
+    grid-area: prea;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit minmax(200px, 1fr));
+    grid-template-areas:
+      "ex ex par par"
+      "req req req req"
+      "req req req req"
+      "ben ben foo foo";
+    div:nth-child(1) {
+      grid-area: ex;
+      & p:last-child {
+        display: flex;
+        flex-direction: column;
+        @include m.after($image);
+        &::after {
+          display: flex;
+          align-self: end;
+        }
+      }
+    }
+    div:nth-child(2) {
+      grid-area: par;
+    }
+    div:nth-child(3) {
+      grid-area: ben;
+    }
+    div:nth-child(4) {
+      grid-area: req;
+    }
+
+    footer {
+      grid-area: foo;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      & a {
+        grid-column: 2/2;
+      }
+      @include m.after($image);
+      &::after {
+        display: grid;
+        grid-column: 1/1;
+      }
+
+      & a {
+        width: 100px;
+        text-align: center;
+        margin: 7px;
+        border-radius: 10px;
+      }
+    }
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit minmax(150px, 1fr));
+    grid-template-areas:
+      "d-s d-a"
+      "d-s z-r";
+
+    div:nth-child(1) {
+      grid-area: d-s;
+    }
+    div:nth-child(2) {
+      grid-area: d-a;
+    }
+    div:nth-child(3) {
+      grid-area: z-r;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+/*=====================variables of project=====================*/
+@font-face {
+  font-family: yo;
+  src: url("../css-garden/fonts/Hargalia1.otf");
+}
+@font-face {
+  font-family: Handlee;
+  src: url("../css-garden/fonts/Reno.otf");
+}
+
+$font-first: "yo";
+$font-second: "Handlee";
+$color-one: #010221;
+$color-two: #0a7373;
+$color-three: #b7bf99;
+$color-four: #edaa25;
+$color-five: #c43302;
+$color-six: hsl(117, 79%, 94%);
+$color-white: #fff;
+$color-black: #000;
+$base-screen: 38em;
+$mediun-screen: 40em;
+$large-screen: 58em;
+$image: url(images/lilas3.webp);

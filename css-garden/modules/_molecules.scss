@@ -1,0 +1,52 @@
+@use "variables" as *;
+@use "atoms" as a;
+
+/*============= here I going to create some mixins and extends for my project===============*/
+@mixin before($image: url(images/lilas3.wep)) {
+  &::before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background: $image;
+    border-radius: 30% 7% 30% 2%;
+  }
+}
+
+@mixin after($image: url(images/lilas3.webp)) {
+  &::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-image: url("images/lilas3.webp");
+    border-radius: 30% 7% 30% 2%;
+  }
+}
+
+@mixin borders {
+  &::before {
+    content: "";
+    border-top: 2px ridge transparent;
+    background: linear-gradient(to left, $color-three, $color-four, $color-two);
+    width: 100%;
+    height: 2px;
+  }
+  &::after {
+    content: "";
+    border-top: 2px double transparent;
+    background: linear-gradient(to left, $color-three, $color-four, $color-two);
+    width: 100%;
+    height: 2px;
+    margin-top: 12px;
+  }
+}
+
+@mixin colors {
+  @keyframes colors {
+    from {
+      background: linear-gradient(to left, $color-five, $color-four);
+    }
+    to {
+      background: linear-gradient(to right, $color-four, $color-five);
+    }
+  }
+}

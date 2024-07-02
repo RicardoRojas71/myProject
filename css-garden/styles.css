@@ -1,0 +1,277 @@
+/*=====================variables of project=====================*/
+@font-face {
+  font-family: yo;
+  src: url("../css-garden/fonts/Hargalia1.otf");
+}
+@font-face {
+  font-family: Handlee;
+  src: url("../css-garden/fonts/Reno.otf");
+}
+h1 {
+  font-family: "yo", cursive;
+  letter-spacing: 2px;
+  font-size: 3em;
+  color: #c43302;
+  padding: 10px;
+  -webkit-text-stroke: 0.1px #edaa25;
+}
+
+h2,
+h3 {
+  font-family: "yo", "Courier New", Courier, monospace;
+  color: #010221;
+  font-size: 2.2em;
+  margin: 10px;
+}
+
+p {
+  font-family: "Handlee", "Courier New", Courier, monospace;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 5px;
+}
+
+a {
+  font-family: "yo";
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+a:hover {
+  color: #010221;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+li {
+  list-style-type: none;
+}
+
+abbr {
+  color: #010221;
+  font-weight: 600;
+}
+
+div {
+  padding: 8px;
+}
+
+/*============= here I going to create some mixins and extends for my project===============*/
+/*===============base-screen ======================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 38em;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 7px;
+}
+
+.page-wrapper {
+  border: 5px double #edaa25;
+  border-radius: 10px;
+  background-color: hsl(117, 79%, 94%);
+}
+
+h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+}
+h2::before {
+  content: "";
+  border-top: 2px ridge transparent;
+  background: linear-gradient(to left, #b7bf99, #edaa25, #0a7373);
+  width: 100%;
+  height: 2px;
+}
+h2::after {
+  content: "";
+  border-top: 2px double transparent;
+  background: linear-gradient(to left, #b7bf99, #edaa25, #0a7373);
+  width: 100%;
+  height: 2px;
+  margin-top: 12px;
+}
+
+h3 {
+  transition: ease-in 1s;
+}
+h3:hover {
+  text-shadow: #b7bf99 4px 3px;
+  -webkit-text-stroke: 0.1px #0a7373;
+  font-size: 45px;
+  transition: ease-in-out 1s;
+}
+
+h1,
+h2,
+h3,
+ul,
+p {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
+footer a {
+  font-size: 23px;
+  font-weight: 800;
+  font-family: "Handlee";
+  /* background: linear-gradient($color-five, $color-four);
+  color: $color-white;
+  padding: 8px;*/
+  animation: colors 2s ease-in-out infinite;
+}
+footer a:hover {
+  background: #fff;
+  color: #000;
+  font-weight: 800;
+}
+@keyframes colors {
+  from {
+    background: linear-gradient(to left, #c43302, #edaa25);
+  }
+  to {
+    background: linear-gradient(to right, #edaa25, #c43302);
+  }
+}
+
+/*========================mediun-screen===================================*/
+@media (min-width: 40em) {
+  body {
+    width: 980px;
+    height: auto;
+  }
+  .page-wrapper {
+    display: block;
+  }
+  .intro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "hea hea hea hea" "sum prea prea prea";
+  }
+  header {
+    grid-area: hea;
+  }
+  header h2 {
+    text-align: center;
+  }
+  header h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+  }
+  header h1::before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background: url(images/lilas3.webp);
+    border-radius: 30% 7% 30% 2%;
+  }
+  header h1::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-image: url("images/lilas3.webp");
+    border-radius: 30% 7% 30% 2%;
+  }
+  .summary {
+    grid-area: sum;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    border: 5px ridge #b7bf99;
+    border-radius: 15% 7px 20% 7px;
+  }
+  .preamble {
+    grid-area: prea;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit minmax(200px, 1fr));
+    grid-template-areas: "ex ex par par" "req req req req" "req req req req" "ben ben foo foo";
+  }
+  .main div:nth-child(1) {
+    grid-area: ex;
+  }
+  .main div:nth-child(1) p:last-child {
+    display: flex;
+    flex-direction: column;
+  }
+  .main div:nth-child(1) p:last-child::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-image: url("images/lilas3.webp");
+    border-radius: 30% 7% 30% 2%;
+  }
+  .main div:nth-child(1) p:last-child::after {
+    display: flex;
+    align-self: end;
+  }
+  .main div:nth-child(2) {
+    grid-area: par;
+  }
+  .main div:nth-child(3) {
+    grid-area: ben;
+  }
+  .main div:nth-child(4) {
+    grid-area: req;
+  }
+  .main footer {
+    grid-area: foo;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main footer a {
+    grid-column: 2/2;
+  }
+  .main footer::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-image: url("images/lilas3.webp");
+    border-radius: 30% 7% 30% 2%;
+  }
+  .main footer::after {
+    display: grid;
+    grid-column: 1/1;
+  }
+  .main footer a {
+    width: 100px;
+    text-align: center;
+    margin: 7px;
+    border-radius: 10px;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit minmax(150px, 1fr));
+    grid-template-areas: "d-s d-a" "d-s z-r";
+  }
+  .wrapper div:nth-child(1) {
+    grid-area: d-s;
+  }
+  .wrapper div:nth-child(2) {
+    grid-area: d-a;
+  }
+  .wrapper div:nth-child(3) {
+    grid-area: z-r;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
