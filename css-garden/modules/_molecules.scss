@@ -4,17 +4,17 @@
 /*============= here I going to create some mixins and extends for my project===============*/
 
 /*================mixin images before and after in H1============================*/
-@mixin before($image: url(images/lilas3.wep)) {
+@mixin before($image: url(./images/lilas3.wep)) {
   &::before {
     content: "";
     width: 100px;
     height: 100px;
-    background: $image;
+    background-image: $image;
     border-radius: 30% 7% 30% 2%;
   }
 }
 
-@mixin after($image: url(images/lilas3.webp)) {
+@mixin after($image: url(./images/lilas3.webp)) {
   &::after {
     content: "";
     width: 100px;
@@ -63,6 +63,6 @@
   &:hover {
     font-size: 0px;
 
-    background: url(/css-garden/images/huerta.webp) no-repeat center;
+    background: url(./images/huerta.webp) no-repeat center;
   }
 }

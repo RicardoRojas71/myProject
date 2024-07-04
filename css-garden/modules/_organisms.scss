@@ -163,7 +163,7 @@ footer {
       & p:last-child {
         display: flex;
         flex-direction: column;
-        @include m.after($image: url(/css-garden/images/tomate1.webp));
+        @include m.after($image: url(./images/tomate1.webp));
         &::after {
           display: flex;
           align-self: end;
@@ -192,7 +192,7 @@ footer {
         margin: 4px;
         border-radius: 10px;
       }
-      @include m.after($image: url(/css-garden/images/tomate1.webp));
+      @include m.after($image: url(./images/tomate1.webp));
       &::after {
         display: grid;
         grid-column: 1/1;
