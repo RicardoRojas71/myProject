@@ -9,19 +9,47 @@
   box-sizing: border-box;
 }
 body {
-  width: $base-screen;
+  max-width: 600px;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: block;
   margin: 0 auto;
   padding: 7px;
+  background-color: $color-three;
+  background-image: radial-gradient(
+      circle,
+      #bee0f8 0.1em,
+      transparent 0.1em,
+      #a2f86d 0.1em,
+      transparent 0.2em
+    ),
+    linear-gradient(
+      -135deg,
+      #c99bf6 25%,
+      transparent 0.1em,
+      #fff 40%,
+      transparent 0.1em
+    ),
+    linear-gradient(
+      #bee0f8 20%,
+      transparent 0.1em,
+      #a2f86d 22%,
+      transparent 0.2em
+    );
+
+  background-size: 6px 6px;
+  background-position: 0 0, 0 0, 2em, 2em;
 }
 .page-wrapper {
   border: 5px double $color-four;
   border-radius: 10px;
   background-color: $color-six;
+}
+h1 {
+  display: block;
+  font-weight: 900;
+  animation: colors 4s ease infinite;
+  @include m.colors;
+  transition: 2s ease-out;
 }
 h2 {
   display: flex;
@@ -51,29 +79,37 @@ p {
 
 footer {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 
   & a {
     font-size: 23px;
     font-weight: 800;
     font-family: $font-second;
-    /* background: linear-gradient($color-five, $color-four);
-    color: $color-white;
-    padding: 8px;*/
+    background: linear-gradient(to bottom, $color-four, $color-five);
+    display: grid;
+    align-items: center;
+    width: 90px;
+    height: 40px;
     &:hover {
+      border: 4px double $color-one;
       background: $color-white;
       color: $color-black;
-      font-weight: 800;
+      border-radius: 30% 4% 30% 4%;
     }
-    animation: colors 2s ease-in-out infinite;
-    @include m.colors;
   }
 }
-
+/*=========================================================================*/
 /*========================mediun-screen===================================*/
+/*========================================================================*/
 @media (min-width: $mediun-screen) {
   body {
-    width: 980px;
+    display: block;
+    max-width: 980px;
     height: auto;
+    margin-top: 10px;
   }
   .page-wrapper {
     display: block;
@@ -98,6 +134,7 @@ footer {
       width: 100%;
       @include m.before($image);
       @include m.after($image);
+      @include m.orchard;
     }
   }
   .summary {
@@ -126,7 +163,7 @@ footer {
       & p:last-child {
         display: flex;
         flex-direction: column;
-        @include m.after($image);
+        @include m.after($image: url(/css-garden/images/tomate1.webp));
         &::after {
           display: flex;
           align-self: end;
@@ -149,18 +186,16 @@ footer {
       grid-template-columns: repeat(2, 1fr);
       & a {
         grid-column: 2/2;
+        width: 90px;
+        height: 40px;
+        text-align: center;
+        margin: 4px;
+        border-radius: 10px;
       }
-      @include m.after($image);
+      @include m.after($image: url(/css-garden/images/tomate1.webp));
       &::after {
         display: grid;
         grid-column: 1/1;
-      }
-
-      & a {
-        width: 100px;
-        text-align: center;
-        margin: 7px;
-        border-radius: 10px;
       }
     }
   }

@@ -10,10 +10,9 @@
 h1 {
   font-family: "yo", cursive;
   letter-spacing: 2px;
-  font-size: 3em;
+  font-size: 3.5em;
   color: #c43302;
   padding: 10px;
-  -webkit-text-stroke: 0.1px #edaa25;
 }
 
 h2,
@@ -57,6 +56,10 @@ div {
 }
 
 /*============= here I going to create some mixins and extends for my project===============*/
+/*================mixin images before and after in H1============================*/
+/*=======================mixin border of H2 width linear-gradient ===============*/
+/*======================= changes of colors and borders in H1 ====================*/
+/*============================ hover over images===========================*/
 /*===============base-screen ======================*/
 * {
   margin: 0;
@@ -65,20 +68,39 @@ div {
 }
 
 body {
-  width: 38em;
+  max-width: 600px;
   height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: block;
   margin: 0 auto;
   padding: 7px;
+  background-color: #b7bf99;
+  background-image: radial-gradient(circle, #bee0f8 0.1em, transparent 0.1em, #a2f86d 0.1em, transparent 0.2em), linear-gradient(-135deg, #c99bf6 25%, transparent 0.1em, #fff 40%, transparent 0.1em), linear-gradient(#bee0f8 20%, transparent 0.1em, #a2f86d 22%, transparent 0.2em);
+  background-size: 6px 6px;
+  background-position: 0 0, 0 0, 2em, 2em;
 }
 
 .page-wrapper {
   border: 5px double #edaa25;
   border-radius: 10px;
   background-color: hsl(117, 79%, 94%);
+}
+
+h1 {
+  display: block;
+  font-weight: 900;
+  animation: colors 4s ease infinite;
+  transition: 2s ease-out;
+}
+@keyframes colors {
+  0% {
+    -webkit-text-stroke: 0.1px #edaa25;
+  }
+  50% {
+    -webkit-text-stroke: 0.1px #c43302;
+  }
+  100% {
+    -webkit-text-stroke: 0.1px #edaa25;
+  }
 }
 
 h2 {
@@ -124,35 +146,37 @@ p {
 
 footer {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 }
 footer a {
   font-size: 23px;
   font-weight: 800;
   font-family: "Handlee";
-  /* background: linear-gradient($color-five, $color-four);
-  color: $color-white;
-  padding: 8px;*/
-  animation: colors 2s ease-in-out infinite;
+  background: linear-gradient(to bottom, #edaa25, #c43302);
+  display: grid;
+  align-items: center;
+  width: 90px;
+  height: 40px;
 }
 footer a:hover {
+  border: 4px double #010221;
   background: #fff;
   color: #000;
-  font-weight: 800;
-}
-@keyframes colors {
-  from {
-    background: linear-gradient(to left, #c43302, #edaa25);
-  }
-  to {
-    background: linear-gradient(to right, #edaa25, #c43302);
-  }
+  border-radius: 30% 4% 30% 4%;
 }
 
+/*=========================================================================*/
 /*========================mediun-screen===================================*/
+/*========================================================================*/
 @media (min-width: 40em) {
   body {
-    width: 980px;
+    display: block;
+    max-width: 980px;
     height: auto;
+    margin-top: 10px;
   }
   .page-wrapper {
     display: block;
@@ -186,8 +210,12 @@ footer a:hover {
     content: "";
     width: 100px;
     height: 100px;
-    background-image: url("images/lilas3.webp");
+    background-image: url(images/lilas3.webp);
     border-radius: 30% 7% 30% 2%;
+  }
+  header h1:hover {
+    font-size: 0px;
+    background: url(/css-garden/images/huerta.webp) no-repeat center;
   }
   .summary {
     grid-area: sum;
@@ -217,7 +245,7 @@ footer a:hover {
     content: "";
     width: 100px;
     height: 100px;
-    background-image: url("images/lilas3.webp");
+    background-image: url(/css-garden/images/tomate1.webp);
     border-radius: 30% 7% 30% 2%;
   }
   .main div:nth-child(1) p:last-child::after {
@@ -240,23 +268,22 @@ footer a:hover {
   }
   .main footer a {
     grid-column: 2/2;
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    margin: 4px;
+    border-radius: 10px;
   }
   .main footer::after {
     content: "";
     width: 100px;
     height: 100px;
-    background-image: url("images/lilas3.webp");
+    background-image: url(/css-garden/images/tomate1.webp);
     border-radius: 30% 7% 30% 2%;
   }
   .main footer::after {
     display: grid;
     grid-column: 1/1;
-  }
-  .main footer a {
-    width: 100px;
-    text-align: center;
-    margin: 7px;
-    border-radius: 10px;
   }
   .wrapper {
     display: grid;

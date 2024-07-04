@@ -2,6 +2,8 @@
 @use "atoms" as a;
 
 /*============= here I going to create some mixins and extends for my project===============*/
+
+/*================mixin images before and after in H1============================*/
 @mixin before($image: url(images/lilas3.wep)) {
   &::before {
     content: "";
@@ -17,11 +19,11 @@
     content: "";
     width: 100px;
     height: 100px;
-    background-image: url("images/lilas3.webp");
+    background-image: $image;
     border-radius: 30% 7% 30% 2%;
   }
 }
-
+/*=======================mixin border of H2 width linear-gradient ===============*/
 @mixin borders {
   &::before {
     content: "";
@@ -39,14 +41,28 @@
     margin-top: 12px;
   }
 }
-
+/*======================= changes of colors and borders in H1 ====================*/
 @mixin colors {
   @keyframes colors {
-    from {
-      background: linear-gradient(to left, $color-five, $color-four);
+    0% {
+      -webkit-text-stroke: 0.1px $color-four;
     }
-    to {
-      background: linear-gradient(to right, $color-four, $color-five);
+
+    50% {
+      -webkit-text-stroke: 0.1px $color-five;
     }
+
+    100% {
+      -webkit-text-stroke: 0.1px $color-four;
+    }
+  }
+}
+/*============================ hover over images===========================*/
+
+@mixin orchard {
+  &:hover {
+    font-size: 0px;
+
+    background: url(/css-garden/images/huerta.webp) no-repeat center;
   }
 }
