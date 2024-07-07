@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Ricardo Rojas" content="This form page is an example " />
+    <meta property="og:title" content="myProject page" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://RicardoRojas71.github.io/myProject/"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://RicardoRojas71.github.io/myProject/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../images/iconono.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rokkitt:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="../css-garden/index.html">CSS-Garden</a>
+        <a href="#">Javascript</a>
+        <a href="#">SASS</a>
+        <a href="#">API</a>
+        <a href="../index.html">Home</a>
+      </nav>
+      <h1>Let's enroll in our community</h1>
+      <p>We wants to know more about you. Please fill the form</p>
+    </header>
+    <main>
+      <form method="get" action="response.html">
+        <fieldset>
+          <legend>Personal information</legend>
+          <label class="one"
+            >Name* <input type="text" name="name" id="name" required
+          /></label>
+          <label class="one"
+            >Last Name* <input type="text" name="lname" id="lname" required
+          /></label>
+          <label class="one"
+            >Address*<input type="text" name="name" id="name" required
+          /></label>
+          <label class="one"
+            >Telephone Mobile*<input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="1232-12345678"
+              required
+          /></label>
+          <label class="one"
+            >Email*
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@mail.com"
+              required
+          /></label>
+        </fieldset>
+        <fieldset>
+          <legend>Is fun for you ...</legend>
+          <label class="two"
+            ><input type="checkbox" name="running" id="running" />Running</label
+          >
+          <label class="two"
+            ><input type="checkbox" name="chess" id="chess" />Chess</label
+          >
+          <label class="two"
+            ><input type="checkbox" name="Pinstrument" id="Pinstrument" />Play
+            an instrument</label
+          >
+          <label class="two"
+            ><input type="checkbox" name="read" id="read" />Read a good
+            book</label
+          >
+          <label class="two"
+            ><input type="checkbox" name="family" id="family" />Time with
+            family</label
+          >
+          <label class="one"
+            >Another Hobbie<input type="text" name="hobbie" id="hobbie"
+          /></label>
+        </fieldset>
+        <fieldset>
+          <legend>Your Skills</legend>
+          <label class="two"
+            ><input
+              type="checkbox"
+              name="skill"
+              id="html"
+              value="html"
+            />Html</label
+          >
+          <label class="two"
+            ><input
+              type="checkbox"
+              name="skill"
+              id="css3"
+              value="css3"
+            />CSS3</label
+          >
+          <label class="two"
+            ><input
+              type="checkbox"
+              name="skill"
+              id="Javascript"
+              value="Javascript"
+            />Javascript</label
+          >
+          <label class="two"
+            ><input
+              type="checkbox"
+              name="skill"
+              id="react"
+              value="react"
+            />React</label
+          >
+          <label class="two"
+            ><input
+              type="checkbox"
+              name="skill"
+              id="angular"
+              value="angular"
+            />Angular</label
+          >
+        </fieldset>
+        <input
+          class="btnsubmit"
+          type="submit"
+          name="submit"
+          id="submit"
+          value="Send My Application"
+        />
+      </form>
+    </main>
+    <footer>
+      <p>&copy;2024 -Ricardo Rojas-Argentina</p>
+      <img
+        src="../images/bandera1.webp"
+        alt="My country flag"
+        width="30"
+        height="25"
+      />
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
