@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 700px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  background-color: #cdfe9c;
+  background-image: radial-gradient(circle, #f7f4b8 20%, transparent 0.1em, #fbe161), linear-gradient(-45deg, #92a2fd 13%, transparent 0.2em, #a3d7f0 11%, transparent 0.1em);
+  background-size: 4px 6px;
+  background-position: 0 0, 0 0, 4em 4em;
+}
+
+.wrapper {
+  background-color: #fff;
+  border: 5px double #010221;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+/*==================mode dark ==========================*/
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+.dark .barra a {
+  color: #fff;
+}
+.dark .box section img,
+.dark .weather {
+  border: 5px double #fff;
+}
+.dark .wrapper {
+  background-color: #333;
+  border: 6px double #fff;
+}
+
+/*==============================================*/
+header {
+  border-bottom: 1px solid #333;
+}
+
+ul:nth-child(n) {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+ul:nth-child(n) li {
+  list-style: none;
+  padding: 6px;
+}
+ul:nth-child(n) li a {
+  text-decoration: none;
+  font-family: "Rokkitt", "sans serif";
+  font-size: 28px;
+  color: #010221;
+}
+
+.boton {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main h1 {
+  font-family: "lucida calligraphy", "cursive";
+  margin-top: 20px;
+}
+main .weather {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 20px 0;
+  gap: 10px;
+  font-family: "lucida calligraphy", "cursive";
+  border: 6px double #c43303;
+  border-radius: 10%;
+  padding: 10px;
+}
+main .weather .icon {
+  border: 2px solid #edaa25;
+  border-radius: 5%;
+  padding: 1px;
+}
+main .box section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .box section h3,
+main .box section h5 {
+  font-family: "lucida calligraphy", "cursive";
+  font-size: 23px;
+  padding: 6px;
+}
+main .box section img {
+  border: 6px double #333;
+  padding: 5px;
+  border-radius: 10px;
+}
+main .box section p {
+  font-family: "Rokkitt", "sans serif";
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 8px;
+  border-bottom: 1px ridge #333;
+}
+
+footer {
+  width: 90%;
+  font-family: "Rokkitt", "sans serif";
+  font-size: 22px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  position: relative;
+  left: 3%;
+  border: 1px solid #c43303;
+  border-radius: 10px;
+  padding: 3px;
+  margin: 7px 10px 7px 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
