@@ -2,7 +2,7 @@ $font-one: "Rokkitt", "sans serif";
 $font-second: "lucida calligraphy", "cursive";
 $color-first: #010221;
 $color-second: #0a7373;
-$color-three: #edaa25;
+$color-three: hsl(124, 58%, 89%);
 $color-four: #c43303;
 $color-white: #fff;
 $color-black: #333;
@@ -22,26 +22,23 @@ body {
   align-items: center;
   margin: 0 auto;
   position: relative;
-  background-color: #cdfe9c;
-  background-image: radial-gradient(
-      circle,
-      #f7f4b8 20%,
-      transparent 0.1em,
-      #fbe161
-    ),
-    linear-gradient(
-      -45deg,
-      #92a2fd 13%,
-      transparent 0.2em,
-      #a3d7f0 11%,
-      transparent 0.1em
-    );
-  background-size: 4px 6px;
-  background-position: 0 0, 0 0, 4em 4em;
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  background-image: url(images/nubes.png), url(images/planet2.png),
+    url(images/jupiter.png), url(images/cohete1.png), url(images/satelite.png);
+  background-repeat: no-repeat;
+  background-position: 7% 5%, 3% 51%, 90% 95%, 93% 30%, 3% 80%;
+  background-size: 150px 150px;
 }
 .wrapper {
   background-color: $color-white;
-  border: 5px double $color-first;
+
   border-radius: 10px;
   margin: 10px;
 }
@@ -59,7 +56,9 @@ body {
   }
   .wrapper {
     background-color: $color-black;
-    border: 6px double $color-white;
+  }
+  footer {
+    border: 2px solid $color-white;
   }
 }
 
@@ -81,6 +80,14 @@ ul:nth-child(n) {
       font-family: $font-one;
       font-size: 28px;
       color: #010221;
+      transition: background-color 1s ease-in;
+      &:hover {
+        background-color: $color-three;
+        border: 2px solid $color-second;
+        border-radius: 10px;
+        color: $color-first;
+        padding: 1px 6px;
+      }
     }
   }
 }
@@ -96,6 +103,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   & h1 {
     font-family: $font-second;
     margin-top: 20px;
@@ -155,7 +163,7 @@ footer {
   gap: 7px;
   position: relative;
   left: 3%;
-  border: 1px solid $color-four;
+  border: 3px double $color-four;
   border-radius: 10px;
   padding: 3px;
   margin: 7px 10px 7px 10px;
