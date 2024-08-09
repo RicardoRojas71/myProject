@@ -1,0 +1,98 @@
+$color-one: hsl(259, 89%, 14%);
+$color-two: rgb(242, 131, 11);
+$color-three: white;
+$font-one: "rokkitt", sans serif;
+$font-two: "Lucida calligraphy", "Kristen ITC";
+
+body {
+  background-color: $color-one;
+  font-family: $font-one;
+  color: $color-three;
+  max-width: 750px;
+  margin: 0 auto;
+}
+ul {
+  display: flex;
+  justify-content: space-around;
+  & li {
+    list-style: none;
+    & a {
+      text-decoration: none;
+      font-size: 25px;
+      color: white;
+      transition: all 1s ease-in-out;
+      &:hover {
+        font-family: $font-two;
+        font-size: 25px;
+        color: $color-one;
+        background-color: white;
+        border: 2px solid $color-two;
+        padding: 3px 4px;
+        border-radius: 10px;
+        transition-delay: all 1s ease-in;
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.clock {
+  width: 20em;
+  height: 20em;
+  border: 20px solid $color-three;
+  border-radius: 50%;
+  position: relative;
+  padding: 2em;
+  background-color: #2865a2;
+}
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(-3px);
+}
+.hand {
+  width: 50%;
+  height: 10px;
+  border-radius: 150% 0 0 150%;
+  position: absolute;
+  top: 50%;
+  transform: rotate(90deg);
+  transform-origin: 100%;
+  transition: all 0.005s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: $color-two;
+}
+.centro {
+  width: 10%;
+  height: 10%;
+  border: 2px solid $color-three;
+  border-radius: 50%;
+  background-color: $color-two;
+  position: relative;
+  top: 46%;
+  left: 44.5%;
+  z-index: 1;
+}
+footer {
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  height: 35px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 3px ridge $color-two;
+  border-radius: 20px;
+  font-size: 24px;
+}

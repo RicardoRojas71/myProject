@@ -67,7 +67,10 @@ ul:nth-child(n) li a {
   font-family: "Rokkitt", "sans serif";
   font-size: 28px;
   color: #010221;
-  transition: background-color 1s ease-in;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 1px 6px;
+  transition: border 1s ease-in-out;
 }
 ul:nth-child(n) li a:hover {
   background-color: hsl(124, 58%, 89%);

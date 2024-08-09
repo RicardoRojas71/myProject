@@ -80,7 +80,11 @@ ul:nth-child(n) {
       font-family: $font-one;
       font-size: 28px;
       color: #010221;
-      transition: background-color 1s ease-in;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      padding: 1px 6px;
+      transition: border 1s ease-in-out;
+
       &:hover {
         background-color: $color-three;
         border: 2px solid $color-second;
