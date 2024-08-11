@@ -19,3 +19,12 @@ function setDate() {
 }
 
 setInterval(setDate, 1000);
+
+/*================hamburger-menu========================*/
+const open = document.querySelector(".menu");
+const close = document.querySelector(".barra");
+
+open.addEventListener("click", () => {
+  close.classList.toggle("open");
+  open.classList.toggle("close");
+});

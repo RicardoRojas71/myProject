@@ -8,10 +8,11 @@ body {
   background-color: $color-one;
   font-family: $font-one;
   color: $color-three;
-  max-width: 750px;
+  max-width: 800px;
   margin: 0 auto;
+  position:relative;
 }
-ul {
+nav ul {
   display: flex;
   justify-content: space-around;
   & li {
@@ -51,6 +52,7 @@ main {
   position: relative;
   padding: 2em;
   background-color: #2865a2;
+  margin-bottom: 4rem;
 }
 .clock-face {
   position: relative;
@@ -96,3 +98,64 @@ footer {
   border-radius: 20px;
   font-size: 24px;
 }
+.barra{
+  display: none;
+}
+
+/*==========================================================*/
+/*================== small-screen===========================*/
+@media (max-width: 590px) {
+  .menu {
+    position:absolute;
+    top: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    &::before {
+      content: url("images/iconoAbrir.ico");
+      font-weight: 700;
+      font-size: 20px;
+      background: white;
+    }
+    &.close::before {
+      content: url("images/cerrado.ico");
+      top: 5px;
+    }
+  }
+
+  .barra.open {
+    display: block;
+    
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+  .clock {
+    width: 13em;
+    height: 13em;  
+    position: relative;
+   
+  }
+  footer{
+    font-size:medium;
+  }
+
+}
+/*==================large-screen================*/
+
+@media (min-width: 600px) {
+  .barra {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  nav {
+    text-align: center;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
