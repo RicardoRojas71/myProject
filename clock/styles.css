@@ -7,6 +7,11 @@ body {
   position: relative;
 }
 
+header {
+  position: relative;
+  top: 2px;
+}
+
 nav ul {
   display: flex;
   justify-content: space-around;
@@ -83,6 +88,31 @@ main {
   z-index: 1;
 }
 
+.alarm {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.box {
+  width: 80px;
+  height: 30px;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 28px;
+  background-color: #ffc600;
+}
+
+button {
+  width: 60px;
+  height: auto;
+  border-radius: 25%;
+  font-weight: 600;
+  background-color: white;
+  border: 2px ridge #568490;
+}
+
 footer {
   width: 90%;
   margin-right: 5%;
@@ -105,13 +135,13 @@ footer {
 
 /*==========================================================*/
 /*================== small-screen===========================*/
-@media (max-width: 590px) {
+@media (max-width: 550px) {
+  body {
+    width: 100%;
+  }
   .menu {
-    position: absolute;
-    top: 5px;
     margin-left: 10px;
     cursor: pointer;
-    margin-bottom: 5px;
   }
   .menu::before {
     content: url("images/iconoAbrir.ico");
@@ -121,10 +151,14 @@ footer {
   }
   .menu.close::before {
     content: url("images/cerrado.ico");
-    top: 5px;
+    top: 1px;
+    background: white;
   }
   .barra.open {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
   }
   h1 {
     font-size: 2.5em;

@@ -7,10 +7,14 @@ $font-two: "Lucida calligraphy", "Kristen ITC";
 body {
   background-color: $color-one;
   font-family: $font-one;
-  color: $color-three;
+  color:$color-three;
   max-width: 800px;
   margin: 0 auto;
   position:relative;
+}
+header{
+  position:relative;
+  top:2px;
 }
 nav ul {
   display: flex;
@@ -20,7 +24,7 @@ nav ul {
     & a {
       text-decoration: none;
       font-size: 25px;
-      color: white;
+      color: $color-three;
       transition: all 1s ease-in-out;
       &:hover {
         font-family: $font-two;
@@ -83,6 +87,31 @@ main {
   left: 44.5%;
   z-index: 1;
 }
+
+.alarm{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+}
+.box{
+    width:80px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 28px;
+    background-color: #ffc600;
+}
+button{
+    width: 60px;
+    height: auto;
+    border-radius: 25%;
+    font-weight: 600;
+    background-color: white;
+    border: 2px ridge #568490;
+    
+}
+
 footer {
   width: 90%;
   margin-right: 5%;
@@ -104,29 +133,33 @@ footer {
 
 /*==========================================================*/
 /*================== small-screen===========================*/
-@media (max-width: 590px) {
+@media (max-width: 550px) {
+  body{
+    width:100%;
+  }
   .menu {
-    position:absolute;
-    top: 5px;
     margin-left: 10px;
     cursor: pointer;
-    margin-bottom: 5px;
+    
     &::before {
-      content: url("images/menu1.ico");
-        width: 5px;
-        height: auto;
+      content: url("images/iconoAbrir.ico");
       font-weight: 700;
       font-size: 20px;
-      background: white;
+      background: $color-three;
     }
     &.close::before {
       content: url("images/cerrado.ico");
-      top: 5px;
+      top:1px;
+      background: $color-three;
     }
   }
 
   .barra.open {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+
     
   }
   h1 {
